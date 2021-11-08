@@ -56,8 +56,8 @@ class HBNBCommand(cmd.Cmd):
                       "City": City, "Amenity": Amenity,
                       "Review": Review}
         arguments = line.split(' ', 1)
-        verify_error = self.print_error(line)
-        if verify_error is True:
+        bug_check = self.print_error(line)
+        if bug_check is True:
             class_name = arguments[0]
             new_obj = class_dict[class_name]()
             new_obj.save()
@@ -65,8 +65,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, line):
         """ Prints the string representation of an instance """
-        verify_error = self.print_error(line, "verify id")
-        if verify_error is not False:
+        bug_check = self.print_error(line, "verify id")
+        if bug_check is not False:
             arguments = line.split(' ', 1)
             key_name = arguments[0] + "." + arguments[1]
             obj = storage.find_key(key_name)
@@ -75,8 +75,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """ Deletes an instance """
-        verify_error = self.print_error(line, "verify id")
-        if verify_error is not False:
+        bug_check = self.print_error(line, "verify id")
+        if bug_check is not False:
             arguments = line.split(' ', 1)
             key_name = arguments[0] + "." + arguments[1]
             obj = storage.find_key(key_name)
@@ -105,8 +105,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """ Updates an instance by adding or updating attribute """
-        verify_error = self.print_error(line, "verify id")
-        if verify_error is not False:
+        bug_check = self.print_error(line, "verify id")
+        if bug_check is not False:
             arguments = line.split(' ', 4)
             key_name = arguments[0] + "." + arguments[1]
             obj = storage.find_key(key_name)
