@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-The base class BaseModel
+In this module, the base class BaseModel
 """
 
 import uuid
@@ -12,7 +12,8 @@ class BaseModel():
     """ Creating the Base class """
 
     def __init__(self, *args, **kwargs):
-        """Initialization of the instance """
+        """ Initialization of the instance """
+
         current_time = datetime.now()
         if kwargs != {}:
             for key, value in kwargs.items():
@@ -31,21 +32,24 @@ class BaseModel():
 
     def update_instance(self, attribute, value):
         """ Add a new attribute or update instance from input """
+
         setattr(self, attribute, value)
 
     def __str__(self):
-        """Representation of an instance """
+        """ Prints a representation of an instance """
         names = self.__class__.__name__
         return ("[{:s}] ({:s}) {}".format(names, self.id, self.__dict__))
 
     def save(self):
-        """Updates the public instance attribute """
+        """ Updates the public instance attribute """
+
         current_time_updated = datetime.now()
         self.updated_at = current_time_updated
         models.storage.save()
 
     def to_dict(self):
-        """Returns a dictionary of the instance """
+        """ Returns a dictionary of the instance """
+
         objects_dict = self.__dict__.copy()
         objects_dict.update({'__class__': self.__class__.__name__,
                              'created_at': self.created_at.isoformat(),
