@@ -5,7 +5,7 @@ This module contains the entry point of the command interpreter
 import cmd
 import sys
 from models.base_model import BaseModel
-from models import storage
+from models.__init__ import storage
 from models.user import User
 from models.city import City
 from models.place import Place
