@@ -73,7 +73,7 @@ Prints all string representation of all instances based or not on the class name
 
 **update**
 
-Updates an instance based on the class name and id by adding or updating attribute (save the change into the <file.json>). ie: "$ update BaseModel 1234-1234-1234 email "aibnb@holbertonschool.com"
+Updates an instance based on the class name and id by adding or updating attribute (save the change into the <file.json>). ie: "$ update BaseModel 1234-1234-1234 email "aibnb@Airbnb.gmail.com"
 ```
 (hbnb)update BaseModel a3e2850a-41c9-490b-8c26-af9f65d64fff first_name "Betty"
 (hbnb)show BaseModel a3e2850a-41c9-490b-8c26-af9f65d64fff
