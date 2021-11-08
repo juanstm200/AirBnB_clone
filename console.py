@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains the entry point of the command interpreter
+This module contains the entry point of the command interpreter
 """
 import cmd
 import sys
@@ -56,17 +56,17 @@ class HBNBCommand(cmd.Cmd):
                       "City": City, "Amenity": Amenity,
                       "Review": Review}
         arguments = line.split(' ', 1)
-        bug_check = self.print_error(line)
-        if bug_check is True:
+        verify_error = self.print_error(line)
+        if verify_error is True:
             class_name = arguments[0]
-            new_object = class_dict[class_name]()
-            new_object.save()
-            print(new_object.id)
+            new_obj = class_dict[class_name]()
+            new_obj.save()
+            print(new_obj.id)
 
     def do_show(self, line):
         """ Prints the string representation of an instance """
-        bug_check = self.print_error(line, "verify id")
-        if bug_check is not False:
+        verify_error = self.print_error(line, "verify id")
+        if verify_error is not False:
             arguments = line.split(' ', 1)
             key_name = arguments[0] + "." + arguments[1]
             obj = storage.find_key(key_name)
@@ -75,8 +75,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, line):
         """ Deletes an instance """
-        bug_check = self.print_error(line, "verify id")
-        if bug_check is not False:
+        verify_error = self.print_error(line, "verify id")
+        if verify_error is not False:
             arguments = line.split(' ', 1)
             key_name = arguments[0] + "." + arguments[1]
             obj = storage.find_key(key_name)
@@ -105,8 +105,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, line):
         """ Updates an instance by adding or updating attribute """
-        bug_check = self.print_error(line, "verify id")
-        if bug_check is not False:
+        verify_error = self.print_error(line, "verify id")
+        if verify_error is not False:
             arguments = line.split(' ', 4)
             key_name = arguments[0] + "." + arguments[1]
             obj = storage.find_key(key_name)
