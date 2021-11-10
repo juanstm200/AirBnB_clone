@@ -11,5 +11,5 @@ class City(BaseModel):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-    state = ""
+    state_id = ""
     name = ""
